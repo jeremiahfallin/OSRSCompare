@@ -2,16 +2,15 @@ import React from "react";
 import { Link } from "gatsby";
 
 import Layout from "../components/layout";
-import Image from "../components/image";
-import Stats from "../components/Stats";
+import Quests from "../components/Quests";
 import SEO from "../components/seo";
 
-const IndexPage = () => (
+const QuestsPage = () => (
   <Layout>
-    <SEO title="Home" />
-    <Stats />
+    <SEO title="QuestsPage" />
+    <Quests />
     <Link to="/page-2/">Go to page 2</Link>
   </Layout>
 );
 
-export default IndexPage;
+export default QuestsPage;
