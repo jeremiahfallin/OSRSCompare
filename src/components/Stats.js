@@ -1,5 +1,33 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import Img from "gatsby-image";
+import {
+  agility,
+  attack,
+  combat,
+  construction,
+  cooking,
+  crafting,
+  defence,
+  farming,
+  firemaking,
+  fishing,
+  fletching,
+  herblore,
+  hitpoints,
+  hunter,
+  magic,
+  mining,
+  overall,
+  prayer,
+  ranged,
+  runecraft,
+  slayer,
+  smithing,
+  strength,
+  thieving,
+  woodcutting,
+} from "../images";
 
 const skills = [
   "Overall",
@@ -28,6 +56,33 @@ const skills = [
   "Construction",
 ];
 
+const skillsImages = [
+  overall,
+  attack,
+  defence,
+  strength,
+  hitpoints,
+  ranged,
+  prayer,
+  magic,
+  cooking,
+  woodcutting,
+  fletching,
+  fishing,
+  firemaking,
+  crafting,
+  smithing,
+  mining,
+  herblore,
+  agility,
+  thieving,
+  slayer,
+  farming,
+  runecraft,
+  hunter,
+  construction,
+];
+
 const SkillsBox = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -37,8 +92,15 @@ const SkillsBox = styled.div`
 `;
 
 const SkillBox = styled.div`
+  display: grid;
+  grid-template-columns: 2fr 3fr;
   height: 50px;
   border: 1px solid red;
+  justify-items: center;
+  align-content: center;
+  img {
+    margin: 0;
+  }
 `;
 
 const OverRS3 = styled.span`
@@ -140,11 +202,11 @@ const Stats = () => {
       </div>
       <button onClick={e => compareStats(e)}>Compare OSRS to RS3!</button>
       <SkillsBox>
-        {skills.map(skill => {
+        {skills.map((skill, i) => {
           if (data && data.Attack && data.Attack.osrs) {
             return (
               <SkillBox key={skill}>
-                {skill}{" "}
+                <img src={skillsImages[i]} alt={skill} />{" "}
                 {data[skill]["osrs"] > data[skill]["rs3"] ? (
                   <OverRS3>
                     {data[skill]["osrs"]}/{data[skill]["rs3"]}
@@ -157,7 +219,14 @@ const Stats = () => {
               </SkillBox>
             );
           } else {
-            return <SkillBox key={skill}>{skill}</SkillBox>;
+            return (
+              <SkillBox key={skill}>
+                <span>
+                  <img src={skillsImages[i]} alt={skill} />
+                </span>
+                {skill}
+              </SkillBox>
+            );
           }
         })}
       </SkillsBox>
