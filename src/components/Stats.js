@@ -98,6 +98,19 @@ const SkillBox = styled.div`
   border: 1px solid red;
   justify-items: center;
   align-content: center;
+  background-color: red;
+  -webkit-mask-image: radial-gradient(
+      circle 20px at 100% 0,
+      transparent 0,
+      transparent 20px,
+      black 21px
+    ),
+    radial-gradient(
+      circle 20px at 0 0,
+      transparent 0,
+      transparent 20px,
+      black 21px
+    );
   img {
     margin: 0;
   }
@@ -224,7 +237,9 @@ const Stats = () => {
                 <span>
                   <img src={skillsImages[i]} alt={skill} />
                 </span>
-                {skill}
+                <div>
+                  <span>OSRS</span>/<span>RS3</span>
+                </div>
               </SkillBox>
             );
           }

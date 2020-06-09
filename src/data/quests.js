@@ -1,97 +1,119 @@
 const allQuests = [
   {
     name: "Cook's Assistant",
+    completed: false,
     skills: false,
     requiredQuests: false,
     members: false,
   },
   {
     name: "Demon Slayer",
+    completed: false,
     skills: false,
     requiredQuests: false,
     members: false,
   },
   {
     name: "The Restless Ghost",
+    completed: false,
     skills: false,
     requiredQuests: false,
     members: false,
   },
   {
     name: "Romeo & Juliet",
+    completed: false,
     skills: false,
     requiredQuests: false,
     members: false,
   },
   {
     name: "Sheep Shearer",
+    completed: false,
     skills: false,
     requiredQuests: false,
     members: false,
   },
   {
     name: "Shield of Arrav",
+    completed: false,
     skills: false,
     requiredQuests: false,
     members: false,
   },
   {
     name: "Ernest the Chicken",
+    completed: false,
     skills: false,
     requiredQuests: false,
     members: false,
   },
   {
     name: "Vampire Slayer",
+    completed: false,
     skills: false,
     requiredQuests: false,
     members: false,
   },
-  { name: "Imp Catcher", skills: false, requiredQuests: false, members: false },
+  {
+    name: "Imp Catcher",
+    completed: false,
+    skills: false,
+    requiredQuests: false,
+    members: false,
+  },
   {
     name: "Prince Ali Rescue",
+    completed: false,
     skills: false,
     requiredQuests: false,
     members: false,
   },
   {
     name: "Doric's Quest",
+    completed: false,
     skills: false,
     requiredQuests: false,
     members: false,
   },
   {
     name: "Black Knights' Fortress",
+    completed: false,
     skills: false,
     requiredQuests: false,
     members: false,
   },
   {
     name: "Witch's Potion",
+    completed: false,
     skills: false,
     requiredQuests: false,
     members: false,
   },
   {
     name: "The Knight's Sword",
+    completed: false,
     skills: { mining: 10 },
     requiredQuests: false,
     members: false,
   },
   {
     name: "Goblin Diplomacy",
+    completed: false,
     skills: false,
     requiredQuests: false,
     members: false,
   },
   {
     name: "Pirate's Treasure",
+    completed: false,
     skills: false,
     requiredQuests: false,
     members: false,
   },
   {
     name: "Dragon Slayer",
+    completed: false,
     skills: false,
     requiredQuests: false,
     members: false,
@@ -99,47 +121,65 @@ const allQuests = [
   },
   {
     name: "Rune Mysteries",
+    completed: false,
     skills: false,
     requiredQuests: false,
     members: false,
   },
   {
     name: "Misthalin Mystery",
+    completed: false,
     skills: false,
     requiredQuests: false,
     members: false,
   },
   {
     name: "The Corsair Curse",
+    completed: false,
     skills: false,
     requiredQuests: false,
     members: false,
   },
   {
     name: "X Marks the Spot",
+    completed: false,
     skills: false,
     requiredQuests: false,
     members: false,
   },
 
-  { name: "Druidic Ritual", skills: false, requiredQuests: false },
+  {
+    name: "Druidic Ritual",
+    completed: false,
+    members: true,
+    skills: false,
+    requiredQuests: false,
+  },
   {
     name: "Lost City",
+    completed: false,
+    members: true,
     skills: { crafting: 31, woodcutting: 36 },
     requiredQuests: false,
   },
   {
     name: "Witch's House",
+    completed: false,
+    members: true,
     skills: false,
     requiredQuests: false,
   },
   {
     name: "Merlin's Crystal",
+    completed: false,
+    members: true,
     skills: false,
     requiredQuests: false,
   },
   {
     name: "Heroes' Quest",
+    completed: false,
+    members: true,
     skills: {
       cooking: 53,
       fishing: 53,
@@ -156,11 +196,15 @@ const allQuests = [
   },
   {
     name: "Scorpion Catcher",
+    completed: false,
+    members: true,
     skills: { prayer: 31 },
     requiredQuests: false,
   },
   {
     name: "Family Crest",
+    completed: false,
+    members: true,
     skills: {
       mining: 40,
       smithing: 40,
@@ -171,106 +215,148 @@ const allQuests = [
   },
   {
     name: "Tribal Totem",
+    completed: false,
+    members: true,
     skills: { thieving: 21 },
     requiredQuests: false,
   },
   {
     name: "Fishing Contest",
+    completed: false,
+    members: true,
     skills: { fishing: 10 },
     requiredQuests: false,
   },
   {
     name: "Monk's Friend",
+    completed: false,
+    members: true,
     skills: false,
     requiredQuests: false,
   },
   {
     name: "Temple of Ikov",
+    completed: false,
+    members: true,
     skills: { thieving: 42, ranged: 40 },
     requiredQuests: false,
   },
   {
     name: "Clock Tower",
+    completed: false,
+    members: true,
     skills: false,
     requiredQuests: false,
   },
   {
     name: "Holy Grail",
+    completed: false,
+    members: true,
     skills: { attack: 20 },
     requiredQuests: ["Merlin's Crystal"],
   },
   {
     name: "Tree Gnome Village",
+    completed: false,
+    members: true,
     skills: false,
     requiredQuests: false,
   },
   {
     name: "Fight Arena",
+    completed: false,
+    members: true,
     skills: false,
     requiredQuests: false,
   },
   {
     name: "Hazeel Cult",
+    completed: false,
+    members: true,
     skills: false,
     requiredQuests: false,
   },
   {
     name: "Sheep Herder",
+    completed: false,
+    members: true,
     skills: false,
     requiredQuests: false,
   },
   {
     name: "Plague City",
+    completed: false,
+    members: true,
     skills: false,
     requiredQuests: false,
   },
   {
     name: "Sea Slug",
+    completed: false,
+    members: true,
     skills: { firemaking: 30 },
     requiredQuests: false,
   },
   {
     name: "Waterfall Quest",
+    completed: false,
+    members: true,
     skills: false,
     requiredQuests: false,
   },
   {
     name: "Biohazard",
+    completed: false,
+    members: true,
     skills: false,
     requiredQuests: ["Plague City"],
   },
   {
     name: "Jungle Potion",
+    completed: false,
+    members: true,
     skills: false,
     requiredQuests: ["Druidic Ritual"],
   },
   {
     name: "The Grand Tree",
+    completed: false,
+    members: true,
     skills: { agility: 25 },
     requiredQuests: false,
   },
   {
     name: "Shilo Village",
+    completed: false,
+    members: true,
     skills: { crafting: 20, agility: 32 },
     requiredQuests: ["Jungle Potion"],
   },
   {
     name: "Underground Pass",
+    completed: false,
+    members: true,
     skills: { ranged: 25 },
     requiredQuests: ["Biohazard", "Plague City"],
   },
   {
     name: "Observatory Quest",
+    completed: false,
+    members: true,
     skills: false,
     requiredQuests: false,
   },
   {
     name: "The Tourist Trap",
+    completed: false,
+    members: true,
     skills: { fletching: 10, smithing: 20 },
     requiredQuests: false,
   },
   {
     name: "Watchtower",
+    completed: false,
+    members: true,
     skills: {
       magic: 15,
       thieving: 15,
@@ -280,16 +366,38 @@ const allQuests = [
     },
     requiredQuests: false,
   },
-  { name: "Dwarf Cannon", skills: false, requiredQuests: false },
-  { name: "Murder Mystery", skills: false, requiredQuests: false },
+  {
+    name: "Dwarf Cannon",
+    completed: false,
+    members: true,
+    skills: false,
+    requiredQuests: false,
+  },
+  {
+    name: "Murder Mystery",
+    completed: false,
+    members: true,
+    skills: false,
+    requiredQuests: false,
+  },
   {
     name: "The Dig Site",
+    completed: false,
+    members: true,
     skills: { agility: 10, herblore: 10, thieving: 25 },
     requiredQuests: false,
   },
-  { name: "Gertrude's Cat", skills: false, requiredQuests: false },
+  {
+    name: "Gertrude's Cat",
+    completed: false,
+    members: true,
+    skills: false,
+    requiredQuests: false,
+  },
   {
     name: "Legends' Quest",
+    completed: false,
+    members: true,
     skills: {
       agility: 50,
       crafting: 50,
@@ -320,62 +428,92 @@ const allQuests = [
   },
   {
     name: "Big Chompy Bird Hunting",
+    completed: false,
+    members: true,
     skills: { fletching: 5, cooking: 30, ranged: 30 },
     requiredQuests: false,
   },
   {
     name: "Elemental Workshop I",
+    completed: false,
+    members: true,
     skills: { mining: 20, smithing: 20, crafting: 20 },
     requiredQuests: false,
   },
-  { name: "Priest in Peril", skills: false, requiredQuests: false },
+  {
+    name: "Priest in Peril",
+    completed: false,
+    members: true,
+    skills: false,
+    requiredQuests: false,
+  },
   {
     name: "Nature Spirit",
+    completed: false,
+    members: true,
     skills: false,
     requiredQuests: ["Priest in Peril", "The Restless Ghost"],
   },
   {
     name: "Death Plateau",
+    completed: false,
+    members: true,
     skills: false,
     requiredQuests: false,
   },
   {
     name: "Troll Stronghold",
+    completed: false,
+    members: true,
     skills: { agility: 15 },
     requiredQuests: ["Death Plateau"],
   },
   {
     name: "Tai Bwo Wannai Trio",
+    completed: false,
+    members: true,
     skills: { agility: 15, cooking: 30, fishing: 5 },
     requiredQuests: ["Jungle Potion"],
   },
   {
     name: "Regicide",
+    completed: false,
+    members: true,
     skills: { agility: 56 },
     requiredQuests: ["Underground Pass", "Biohazard", "Plague City"],
   },
   {
     name: "Eadgar's Ruse",
+    completed: false,
+    members: true,
     skills: { herblore: 31 },
     requiredQuests: ["Druidic Ritual", "Troll Stronghold", "Death Plateau"],
   },
   {
     name: "Shades of Mort'ton",
+    completed: false,
+    members: true,
     skills: { crafting: 20, herblore: 15, firemaking: 5 },
     requiredQuests: ["Priest in Peril"],
   },
   {
     name: "The Fremennik Trials",
+    completed: false,
+    members: true,
     skills: { fletching: 25, woodcutting: 40, crafting: 40 },
     requiredQuests: false,
   },
   {
     name: "Horror from the Deep",
+    completed: false,
+    members: true,
     skills: { agility: 35 },
     requiredQuests: ["Alfred Grimhand's Barcrawl"],
   },
   {
     name: "Throne of Miscellania",
+    completed: false,
+    members: true,
     skills: { woodcutting: 45, farming: 10, mining: 30, fishing: 35 },
     requiredQuests: [
       "Heroes' Quest",
@@ -388,36 +526,50 @@ const allQuests = [
   },
   {
     name: "Monkey Madness I",
+    completed: false,
+    members: true,
     skills: false,
     requiredQuests: ["The Grand Tree", "Tree Gnome Village"],
   },
   {
     name: "Haunted Mine",
+    completed: false,
+    members: true,
     skills: { crafting: 35 },
     requiredQuests: ["Priest in Peril"],
   },
   {
     name: "Troll Romance",
+    completed: false,
+    members: true,
     skills: { agility: 28 },
     requiredQuests: ["Troll Stronghold", "Death Plateau"],
   },
   {
     name: "The Eyes of Glouphrie",
+    completed: false,
+    members: true,
     skills: { construction: 5, magic: 46 },
     requiredQuests: ["The Grand Tree"],
   },
   {
     name: "In Search of the Myreque",
+    completed: false,
+    members: true,
     skills: { agility: 25 },
     requiredQuests: ["Nature Spirit", "Priest in Peril", "The Restless Ghost"],
   },
   {
     name: "Creature of Fenkenstrain",
+    completed: false,
+    members: true,
     skills: { crafting: 20, thieving: 25, smithing: 4 },
     requiredQuests: ["Priest in Peril", "The Restless Ghost"],
   },
   {
     name: "Roving Elves",
+    completed: false,
+    members: true,
     skills: { agility: 56 },
     quests: [
       "Regicide",
@@ -429,11 +581,15 @@ const allQuests = [
   },
   {
     name: "Ghosts Ahoy",
+    completed: false,
+    members: true,
     skills: { agility: 25, cooking: 20 },
     requiredQuests: ["Priest in Peril", "The Restless Ghost"],
   },
   {
     name: "One Small Favour",
+    completed: false,
+    members: true,
     skills: { agility: 36, crafting: 25, herblore: 18, smithing: 30 },
     requiredQuests: [
       "Rune Mysteries",
@@ -444,26 +600,36 @@ const allQuests = [
   },
   {
     name: "Mountain Daughter",
+    completed: false,
+    members: true,
     skills: { agility: 20 },
     requiredQuests: false,
   },
   {
     name: "Between a Rock...",
+    completed: false,
+    members: true,
     skills: { defence: 30, mining: 40, smithing: 50 },
     requiredQuests: ["Dwarf Cannon", "Fishing Contest"],
   },
   {
     name: "The Feud",
+    completed: false,
+    members: true,
     skills: { thieving: 30 },
     requiredQuests: false,
   },
   {
     name: "The Golem",
+    completed: false,
+    members: true,
     skills: { crafting: 20, thieving: 25 },
     requiredQuests: false,
   },
   {
     name: "Desert Treasure",
+    completed: false,
+    members: true,
     skills: { thieving: 53, magic: 50, firemaking: 50, slayer: 10 },
     requiredQuests: [
       "The Dig Site",
@@ -477,37 +643,51 @@ const allQuests = [
   },
   {
     name: "Icthlarin's Little Helper",
+    completed: false,
+    members: true,
     skills: false,
     requiredQuests: ["Gertrude's Cat"],
   },
   {
     name: "Tears of Guthix",
+    completed: false,
+    members: true,
     skills: { firemaking: 49, crafting: 20, mining: 20 },
     requiredQuests: false,
     requiredQuestPoints: 43,
   },
   {
     name: "Zogre Flesh Eaters",
+    completed: false,
+    members: true,
     skills: { smithing: 4, herblore: 8, ranged: 30, fletching: 30 },
     requiredQuests: ["Big Chompy Bird Hunting", "Jungle Potion"],
   },
   {
     name: "The Lost Tribe",
+    completed: false,
+    members: true,
     skills: { agility: 13, thieving: 13, mining: 17 },
     requiredQuests: ["Goblin Diplomacy", "Rune Mysteries"],
   },
   {
     name: "The Giant Dwarf",
+    completed: false,
+    members: true,
     skills: { crafting: 12, firemaking: 16, magic: 33, thieving: 14 },
     requiredQuests: false,
   },
   {
     name: "Recruitment Drive",
+    completed: false,
+    members: true,
     skills: false,
     requiredQuests: ["Black Knights' Fortress", "Druidic Ritual"],
   },
   {
     name: "Mourning's End Part I",
+    completed: false,
+    members: true,
     skills: { ranged: 60, thieving: 50 },
     requiredQuests: [
       "Roving Elves",
@@ -522,11 +702,15 @@ const allQuests = [
   },
   {
     name: "Forgettable Tale...",
+    completed: false,
+    members: true,
     skills: { cooking: 22, farming: 17 },
     requiredQuests: ["The Giant Dwarf", "Fishing Contest"],
   },
   {
     name: "Garden of Tranquility",
+    completed: false,
+    members: true,
     skills: { farming: 25 },
     requiredQuests: [
       "Creature of Fenkenstrain",
@@ -536,11 +720,15 @@ const allQuests = [
   },
   {
     name: "A Tail of Two Cats",
+    completed: false,
+    members: true,
     skills: false,
     requiredQuests: ["Icthlarin's Little Helper", "Gertrude's Cat"],
   },
   {
     name: "Wanted!",
+    completed: false,
+    members: true,
     skills: false,
     requiredQuests: [
       "Recruitment Drive",
@@ -556,6 +744,8 @@ const allQuests = [
   },
   {
     name: "Mourning's End Part II",
+    completed: false,
+    members: true,
     skills: false,
     requiredQuests: [
       "Mourning's End Part I",
@@ -571,6 +761,8 @@ const allQuests = [
   },
   {
     name: "Rum Deal",
+    completed: false,
+    members: true,
     skills: {
       crafting: 42,
       fishing: 50,
@@ -587,16 +779,22 @@ const allQuests = [
   },
   {
     name: "Shadow of the Storm",
+    completed: false,
+    members: true,
     skills: { crafting: 30 },
     requiredQuests: ["The Golem", "Demon Slayer"],
   },
   {
     name: "Making History",
+    completed: false,
+    members: true,
     skills: false,
     requiredQuests: ["Priest in Peril", "The Restless Ghost"],
   },
   {
     name: "Ratcatchers",
+    completed: false,
+    members: true,
     skills: false,
     requiredQuests: [
       "Icthlarin's Little Helper",
@@ -606,11 +804,15 @@ const allQuests = [
   },
   {
     name: "Spirits of the Elid",
+    completed: false,
+    members: true,
     skills: { magic: 33, ranged: 37, mining: 37, thieving: 37 },
     requiredQuests: false,
   },
   {
     name: "Devious Minds",
+    completed: false,
+    members: true,
     skills: { smithing: 65, runecraft: 50, fletching: 50 },
     requiredQuests: [
       "Wanted!",
@@ -629,16 +831,22 @@ const allQuests = [
   },
   {
     name: "The Hand in the Sand",
+    completed: false,
+    members: true,
     skills: { thieving: 17, crafting: 49 },
     requiredQuests: false,
   },
   {
     name: "Enakhra's Lament",
+    completed: false,
+    members: true,
     skills: { crafting: 50, firemaking: 45, prayer: 43, magic: 39 },
     requiredQuests: false,
   },
   {
     name: "Cabin Fever",
+    completed: false,
+    members: true,
     skills: { agility: 42, crafting: 45, smithing: 50, ranged: 40 },
     requiredQuests: [
       "Pirate's Treasure",
@@ -651,6 +859,8 @@ const allQuests = [
   },
   {
     name: "Fairytale I - Growing Pains",
+    completed: false,
+    members: true,
     skills: false,
     requiredQuests: [
       "Lost City",
@@ -662,6 +872,8 @@ const allQuests = [
   },
   {
     name: "Recipe for Disaster",
+    completed: false,
+    members: true,
     skills: {
       cooking: 70,
       agility: 48,
@@ -721,6 +933,8 @@ const allQuests = [
   },
   {
     name: "In Aid of the Myreque",
+    completed: false,
+    members: true,
     skills: { crafting: 25, mining: 15, magic: 7 },
     requiredQuests: [
       "In Search of the Myreque",
@@ -731,16 +945,22 @@ const allQuests = [
   },
   {
     name: "A Soul's Bane",
+    completed: false,
+    members: true,
     skills: false,
     requiredQuests: false,
   },
   {
     name: "Rag and Bone Man",
+    completed: false,
+    members: true,
     skills: false,
     requiredQuests: false,
   },
   {
     name: "Rag and Bone Man II",
+    completed: false,
+    members: true,
     skills: { slayer: 40, defence: 20 },
     requiredQuests: [
       "Rag and Bone Man",
@@ -752,6 +972,8 @@ const allQuests = [
   },
   {
     name: "Swan Song",
+    completed: false,
+    members: true,
     skills: {
       magic: 66,
       cooking: 62,
@@ -774,11 +996,15 @@ const allQuests = [
   },
   {
     name: "Royal Trouble",
+    completed: false,
+    members: true,
     skills: { agility: 40, slayer: 40 },
     requiredQuests: ["Throne of Miscellania"],
   },
   {
     name: "Death to the Dorgeshuun",
+    completed: false,
+    members: true,
     skills: {
       agility: 23,
       thieving: 23,
@@ -787,6 +1013,8 @@ const allQuests = [
   },
   {
     name: "Fairytale II - Cure a Queen",
+    completed: false,
+    members: true,
     skills: { thieving: 40, farming: 49, herblore: 57 },
     requiredQuests: [
       "Fairytale I - Growing Pains",
@@ -798,6 +1026,8 @@ const allQuests = [
   },
   {
     name: "Lunar Diplomacy",
+    completed: false,
+    members: true,
     skills: {
       herblore: 5,
       crafting: 61,
@@ -817,6 +1047,8 @@ const allQuests = [
   },
   {
     name: "Darkness of Hallowvale",
+    completed: false,
+    members: true,
     skills: {
       construction: 5,
       mining: 20,
@@ -836,6 +1068,8 @@ const allQuests = [
   },
   {
     name: "The Slug Menace",
+    completed: false,
+    members: true,
     skills: { crafting: 30, runecraft: 30, slayer: 30, thieving: 30 },
     requiredQuests: [
       "Wanted!",
@@ -851,6 +1085,8 @@ const allQuests = [
   },
   {
     name: "Elemental Workshop II",
+    completed: false,
+    members: true,
     skills: {
       magic: 20,
       smithing: 30,
@@ -859,6 +1095,8 @@ const allQuests = [
   },
   {
     name: "My Arm's Big Adventure",
+    completed: false,
+    members: true,
     skills: { woodcutting: 10, farming: 29 },
     requiredQuests: [
       "Eadgar's Ruse",
@@ -872,17 +1110,23 @@ const allQuests = [
   },
   {
     name: "Enlightened Journey",
+    completed: false,
+    members: true,
     skills: { firemaking: 20, farming: 30, crafting: 36 },
     requiredQuests: false,
     requiredQuestPoints: 20,
   },
   {
     name: "Eagles' Peak",
+    completed: false,
+    members: true,
     skills: { hunter: 27 },
     requiredQuests: false,
   },
   {
     name: "Animal Magnetism",
+    completed: false,
+    members: true,
     skills: { slayer: 18, crafting: 19, ranged: 30, woodcutting: 35 },
     requiredQuests: [
       "The Restless Ghost",
@@ -892,6 +1136,8 @@ const allQuests = [
   },
   {
     name: "Contact!",
+    completed: false,
+    members: true,
     skills: false,
     requiredQuests: [
       "Prince Ali Rescue",
@@ -901,6 +1147,8 @@ const allQuests = [
   },
   {
     name: "Cold War",
+    completed: false,
+    members: true,
     skills: {
       hunter: 10,
       agility: 30,
@@ -912,16 +1160,22 @@ const allQuests = [
   },
   {
     name: "The Fremennik Isles",
+    completed: false,
+    members: true,
     skills: { construction: 20, agility: 40, woodcutting: 56, crafting: 46 },
     requiredQuests: ["The Fremennik Trials"],
   },
   {
     name: "Tower of Life",
+    completed: false,
+    members: true,
     skills: { construction: 10 },
     requiredQuests: false,
   },
   {
     name: "The Great Brain Robbery",
+    completed: false,
+    members: true,
     skills: { crafting: 16, construction: 30, prayer: 50 },
     requiredQuests: [
       "Creature of Fenkenstrain",
@@ -937,16 +1191,22 @@ const allQuests = [
   },
   {
     name: "What Lies Below",
+    completed: false,
+    members: true,
     skills: { runecraft: 35, mining: 42 },
     requiredQuests: ["Rune Mysteries"],
   },
   {
     name: "Olaf's Quest",
+    completed: false,
+    members: true,
     skills: { firemaking: 40, woodcutting: 50 },
     requiredQuests: ["The Fremennik Trials"],
   },
   {
     name: "Another Slice of H.A.M.",
+    completed: false,
+    members: true,
     skills: { attack: 15, prayer: 25 },
     requiredQuests: [
       "Death to the Dorgeshuun",
@@ -959,6 +1219,8 @@ const allQuests = [
   },
   {
     name: "Dream Mentor",
+    completed: false,
+    members: true,
     skills: { combat: 85 },
     requiredQuests: [
       "Lunar Diplomacy",
@@ -975,6 +1237,8 @@ const allQuests = [
   },
   {
     name: "Grim Tales",
+    completed: false,
+    members: true,
     skills: {
       farming: 45,
       herblore: 52,
@@ -986,6 +1250,8 @@ const allQuests = [
   },
   {
     name: "King's Ransom",
+    completed: false,
+    members: true,
     skills: { magic: 45, defence: 65 },
     requiredQuests: [
       "Black Knights' Fortress",
@@ -1001,6 +1267,8 @@ const allQuests = [
   },
   {
     name: "Monkey Madness II",
+    completed: false,
+    members: true,
     skills: {
       slayer: 69,
       crafting: 70,
@@ -1023,26 +1291,36 @@ const allQuests = [
   },
   {
     name: "Client of Kourend",
+    completed: false,
+    members: true,
     skills: false,
     requiredQuests: false,
   },
   {
     name: "Bone Voyage",
+    completed: false,
+    members: true,
     skills: false,
     requiredQuests: ["The Dig Site"],
   },
   {
     name: "The Queen of Thieves",
+    completed: false,
+    members: true,
     skills: { thieving: 20 },
     requiredQuests: ["Client of Kourend"],
   },
   {
     name: "The Depths of Despair",
+    completed: false,
+    members: true,
     skills: { agility: 18 },
     requiredQuests: ["Client of Kourend"],
   },
   {
     name: "Dragon Slayer II",
+    completed: false,
+    members: true,
     skills: {
       magic: 75,
       smithing: 70,
@@ -1091,11 +1369,15 @@ const allQuests = [
   },
   {
     name: "Tale of the Righteous",
+    completed: false,
+    members: true,
     skills: { strength: 16, mining: 10 },
     requiredQuests: false,
   },
   {
     name: "A Taste of Hope",
+    completed: false,
+    members: true,
     skills: {
       crafting: 48,
       agility: 45,
@@ -1114,6 +1396,8 @@ const allQuests = [
   },
   {
     name: "Making Friends with My Arm",
+    completed: false,
+    members: true,
     skills: { firemaking: 66, mining: 72, construction: 35, agility: 68 },
     requiredQuests: [
       "My Arm's Big Adventure",
@@ -1137,16 +1421,22 @@ const allQuests = [
   },
   {
     name: "The Forsaken Tower",
+    completed: false,
+    members: true,
     skills: false,
     requiredQuests: ["Client of Kourend"],
   },
   {
     name: "The Ascent of Arceuus",
+    completed: false,
+    members: true,
     skills: { hunter: 12 },
     requiredQuests: ["Client of Kourend"],
   },
   {
     name: "Song of the Elves",
+    completed: false,
+    members: true,
     skills: {
       agility: 70,
       construction: 70,
@@ -1175,6 +1465,8 @@ const allQuests = [
   },
   {
     name: "The Fremennik Exiles",
+    completed: false,
+    members: true,
     skills: {
       crafting: 65,
       slayer: 60,
@@ -1189,23 +1481,41 @@ const allQuests = [
       "Heroes' Quest",
     ],
   },
-  { name: "Enter the Abyss", skills: false, requiredQuests: false },
   {
-    name: "Alfred Grimhand's Barcrawl",
+    name: "Enter the Abyss",
+    completed: false,
+    members: true,
     skills: false,
     requiredQuests: false,
   },
-  { name: "Skippy and the Mogres", skills: false, requiredQuests: false },
-  { name: "Tai Bwo Wannai Cleanup", skills: false, requiredQuests: false },
-  { name: "Pirate Pete", skills: false, requiredQuests: false },
+  {
+    name: "Alfred Grimhand's Barcrawl",
+    completed: false,
+    members: true,
+    skills: false,
+    requiredQuests: false,
+  },
+  {
+    name: "Skippy and the Mogres",
+    completed: false,
+    members: true,
+    skills: false,
+    requiredQuests: false,
+  },
+  {
+    name: "Tai Bwo Wannai Cleanup",
+    completed: false,
+    members: true,
+    skills: false,
+    requiredQuests: false,
+  },
+  {
+    name: "Pirate Pete",
+    completed: false,
+    members: true,
+    skills: false,
+    requiredQuests: false,
+  },
 ];
-
-allQuests.forEach(quest => {
-  quest.completed = false;
-});
-
-allQuests.forEach(quest => {
-  !("members" in quest) && (quest.members = true);
-});
 
 export default allQuests;

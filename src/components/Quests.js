@@ -86,12 +86,8 @@ const processData = res => {
   return skillsData;
 };
 
-const Quests = () => {
+const PlayerNameInput = ({ setData }) => {
   const [name, setName] = useState("");
-  const [data, setData] = useState(
-    skills.reduce((a, b) => ((a[b] = { osrs: 0 }), a), {})
-  );
-  const [playerQuests, setPlayerQuests] = useState(quests);
 
   async function getStats(e, parameter) {
     if (e) {
@@ -128,6 +124,19 @@ const Quests = () => {
       );
     }
   };
+  return (
+    <>
+      <input type="text" value={name} onChange={e => setName(e.target.value)} />
+      <button onClick={e => setStats(e)}>Get Stats.</button>
+    </>
+  );
+};
+
+const Quests = () => {
+  const [data, setData] = useState(
+    skills.reduce((a, b) => ((a[b] = { osrs: 0 }), a), {})
+  );
+  const [playerQuests, setPlayerQuests] = useState(quests);
 
   const hasRequiredSkills = quest => {
     for (let s in quest.skills) {
@@ -229,8 +238,7 @@ const Quests = () => {
 
   return (
     <QuestStyle>
-      <input type="text" value={name} onChange={e => setName(e.target.value)} />
-      <button onClick={e => setStats(e)}>Get Stats.</button>
+      <PlayerNameInput setData={setData} />
       <ul>
         Non members
         {quests
