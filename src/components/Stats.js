@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import Img from "gatsby-image";
 import {
@@ -145,6 +145,13 @@ const Stats = () => {
   const [data, setData] = useState(
     skills.reduce((a, b) => ((a[b] = { osrs: 0, rs3: 0 }), a), {})
   );
+
+  useEffect(() => {
+    const url = `https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/Tacit?api_key=${process.env.RIOT_KEY}`;
+    fetch(url).then(res => {
+      console.log(res);
+    });
+  }, []);
 
   async function getStats(e, parameter, rs3parameter) {
     if (e) {

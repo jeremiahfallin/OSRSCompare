@@ -132,6 +132,74 @@ const PlayerNameInput = ({ setData }) => {
   );
 };
 
+const getQuestStatus = quest => {
+  if (quest.completed) {
+    return "green";
+  } else if (hasRequiredQuests(quest) && hasRequiredSkills(quest)) {
+    return "black";
+  } else {
+    return "red";
+  }
+};
+
+const QuestList = ({ playerQuests, quest }) => {
+  // This takes forever to run.
+  return (
+    <ul>
+      {quest.requiredQuests.map((q, i) => {
+        const requiredQuest = playerQuests[getQuestIndexFromName(q)];
+        return (
+          <React.Fragment key={i}>
+            <QuestListItem quest={requiredQuest} key={requiredQuest.name} />
+            {requiredQuest.requiredQuests && (
+              <QuestList quest={requiredQuest} />
+            )}
+          </React.Fragment>
+        );
+      })}
+    </ul>
+  );
+};
+
+const QuestListItem = ({ quest }) => {
+  const markQuestCompletion = quest => {
+    let questChange = [...playerQuests];
+
+    questChange[getQuestIndexFromName(quest.name)]["completed"] = !quest[
+      "completed"
+    ];
+
+    for (let q in quest.requiredQuests) {
+      const rqi = getQuestIndexFromName(quest.requiredQuests[q]);
+      if (playerQuests[rqi].completed === false) {
+        markQuestCompletion(playerQuests[rqi]);
+      }
+    }
+
+    setPlayerQuests([...questChange]);
+  };
+  return (
+    <li>
+      <label className="container">
+        <QuestSpan status={getQuestStatus(quest)}>{quest.name}</QuestSpan>
+        <input
+          type="checkbox"
+          checked={quest.completed}
+          onChange={e => markQuestCompletion(quest)}
+        />
+        <span className="checkmark" />
+      </label>
+    </li>
+  );
+};
+
+const getQuestIndexFromName = questName => {
+  const questIndex = quests.findIndex(x => x.name === questName);
+  if (questIndex !== -1) {
+    return questIndex;
+  }
+};
+
 const Quests = () => {
   const [data, setData] = useState(
     skills.reduce((a, b) => ((a[b] = { osrs: 0 }), a), {})
@@ -162,80 +230,6 @@ const Quests = () => {
     return true;
   };
 
-  const markQuestCompletion = quest => {
-    let questChange = [...playerQuests];
-
-    questChange[getQuestIndexFromName(quest.name)]["completed"] = !quest[
-      "completed"
-    ];
-
-    for (let q in quest.requiredQuests) {
-      const rqi = getQuestIndexFromName(quest.requiredQuests[q]);
-      if (playerQuests[rqi].completed === false) {
-        markQuestCompletion(playerQuests[rqi]);
-      }
-    }
-
-    setPlayerQuests([...questChange]);
-  };
-
-  const getQuestStatus = quest => {
-    if (quest.completed) {
-      return "green";
-    } else if (hasRequiredQuests(quest) && hasRequiredSkills(quest)) {
-      return "black";
-    } else {
-      return "red";
-    }
-  };
-
-  const getQuestIndexFromName = questName => {
-    const questIndex = quests.findIndex(x => x.name === questName);
-    if (questIndex !== -1) {
-      return questIndex;
-    }
-  };
-
-  const QuestList = ({ quest }) => {
-    // This takes forever to run.
-    return (
-      <ul>
-        {quest.requiredQuests.map((q, i) => {
-          const requiredQuest = playerQuests[getQuestIndexFromName(q)];
-          return (
-            <React.Fragment key={i}>
-              <QuestListItem quest={requiredQuest} key={requiredQuest.name} />
-              {requiredQuest.requiredQuests && (
-                <RequiredQuestList quest={requiredQuest} />
-              )}
-            </React.Fragment>
-          );
-        })}
-      </ul>
-    );
-  };
-
-  const RequiredQuestList = ({ quest }) => {
-    const QuestListReturn = useMemo(() => <QuestList quest={quest} />, [quest]);
-    return <>{QuestListReturn}</>;
-  };
-
-  const QuestListItem = ({ quest }) => {
-    return (
-      <li>
-        <label className="container">
-          <QuestSpan status={getQuestStatus(quest)}>{quest.name}</QuestSpan>
-          <input
-            type="checkbox"
-            checked={quest.completed}
-            onChange={e => markQuestCompletion(quest)}
-          />
-          <span className="checkmark" />
-        </label>
-      </li>
-    );
-  };
-
   return (
     <QuestStyle>
       <PlayerNameInput setData={setData} />
@@ -255,7 +249,9 @@ const Quests = () => {
             return (
               <React.Fragment key={quest.name}>
                 <QuestListItem quest={quest} key={quest.name} />
-                {quest.requiredQuests && <RequiredQuestList quest={quest} />}
+                {quest.requiredQuests && (
+                  <QuestList playerQuests={playerQuests} quest={quest} />
+                )}
               </React.Fragment>
             );
           })}
